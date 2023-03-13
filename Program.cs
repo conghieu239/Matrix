@@ -1,9 +1,16 @@
-﻿using System;
+using System;
 
 namespace OOP_Matrix
 {
-    class Square_Matrix
+
+    public interface SizeInt
     {
+        int length { get;}
+    }
+
+    public class Square_Matrix: SizeInt
+    {
+
         public int length { get; set; }
         public int[,] A = new int[100, 100];
 
@@ -18,11 +25,12 @@ namespace OOP_Matrix
             for (int i = 1; i <= length; i++)
                 for (int j = 1; j <= length; j++)
                     this.A[i, j] = A[i, j];
-
+   
         }
 
         public void nhap()
         {
+
             Console.Write("Nhap do dai cua ma tran vuong: ");
             length = int.Parse(Console.ReadLine());
             Console.WriteLine("Nhap ma tran:");
